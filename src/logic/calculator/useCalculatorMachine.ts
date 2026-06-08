@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import {
   chooseOperator as chooseOperatorState,
+  clear as clearState,
   deleteDigit as deleteDigitState,
   equals as equalsState,
   getFormattedDisplay,
@@ -16,7 +17,7 @@ export function useCalculatorMachine() {
   const formattedDisplay = useMemo(() => getFormattedDisplay(state), [state]);
 
   function clear() {
-    setState(initialCalculatorState);
+    setState(clearState());
   }
 
   function inputDigit(digit: string) {

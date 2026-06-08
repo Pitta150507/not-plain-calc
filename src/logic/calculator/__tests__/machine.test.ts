@@ -4,6 +4,7 @@ import { ERROR_DISPLAY, countDigits, formatExpressionValue, formatResult, parseD
 import {
   CalculatorState,
   chooseOperator,
+  clear,
   deleteDigit,
   equals,
   initialCalculatorState,
@@ -73,6 +74,14 @@ describe("calculator state machine", () => {
     expect(state.display).toBe("0");
   });
 
+  it("clears display, expression, stored value, and active operator", () => {
+    let state = enterDigits(initialCalculatorState, "12");
+    state = chooseOperator(state, "add");
+    state = enterDigits(state, "3");
+
+    expect(clear()).toEqual(initialCalculatorState);
+  });
+
   it("converts the current display to a percent", () => {
     const state = percent(enterDigits(initialCalculatorState, "25"));
 
@@ -88,6 +97,27 @@ describe("calculator state machine", () => {
     expect(state.display).toBe("81");
     expect(state.expression).toBe("9 × 9");
     expect(state.operator).toBeNull();
+    expect(state.waitingForNextInput).toBe(true);
+  });
+
+  it("resolves subtraction through the state machine", () => {
+    let state = enterDigits(initialCalculatorState, "9");
+    state = chooseOperator(state, "subtract");
+    state = enterDigits(state, "4");
+    state = equals(state);
+
+    expect(state.display).toBe("5");
+    expect(state.expression).toBe("9 - 4");
+  });
+
+  it("shows undefined after divide by zero through the state machine", () => {
+    let state = enterDigits(initialCalculatorState, "8");
+    state = chooseOperator(state, "divide");
+    state = enterDigits(state, "0");
+    state = equals(state);
+
+    expect(state.display).toBe(ERROR_DISPLAY);
+    expect(state.expression).toBe("8 ÷ 0");
     expect(state.waitingForNextInput).toBe(true);
   });
 

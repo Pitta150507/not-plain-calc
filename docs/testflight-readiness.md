@@ -2,7 +2,7 @@
 
 ## Current Status
 
-Not Plain Calc is ready for a TestFlight build candidate after EAS credentials are configured.
+Not Plain Calc is ready for a TestFlight build candidate after EAS and Apple Developer credentials are configured.
 
 ## Completed
 
@@ -15,6 +15,7 @@ Not Plain Calc is ready for a TestFlight build candidate after EAS credentials a
 - Active operator buttons expose selected state to assistive technologies.
 - Result display exposes a text role and polite live region.
 - Release screenshot set generated at App Store portrait dimensions.
+- Privacy policy draft and App Store metadata draft are available in `docs/`.
 
 ## Build Checklist
 
@@ -24,7 +25,7 @@ Not Plain Calc is ready for a TestFlight build candidate after EAS credentials a
 - Run `npx expo install --check`.
 - Run an iOS simulator smoke test.
 - Build with `eas build --platform ios --profile production`.
-- Submit the generated build to TestFlight.
+- Submit the generated build to TestFlight only after explicit human approval.
 
 ## App Store Metadata Draft
 
@@ -41,9 +42,13 @@ calculator, arithmetic, math, utility, everyday calculator
 Privacy:
 The app does not collect personal data, use analytics, or transmit calculator input.
 
+Disclaimer:
+Not Plain Calc is independent and is not affiliated with, endorsed by, or sponsored by Apple Inc.
+
 ## Remaining External Work
 
 - Configure EAS/Apple credentials.
 - Create the App Store Connect app record.
 - Upload screenshots from `docs/screenshots/app-store/`.
 - Complete Apple privacy nutrition labels.
+- Replace placeholder support and marketing URLs.

@@ -27,6 +27,8 @@ Caption direction:
 - "A small utility with a real product identity"
 - "Final UI, release icon, and focused test coverage"
 
+Avoid public screenshot captions that imply Apple affiliation or describe the app as an official Macintosh product.
+
 ## Portfolio Case Study Outline
 
 ### 1. Project Snapshot

@@ -1,12 +1,14 @@
 # Not Plain Calc Final Design Direction
 
-Not Plain Calc is a small iOS-first calculator with a structured Apple utility feeling: clear, tactile, friendly, and premium without becoming ornamental.
+Not Plain Calc is a small iOS-first calculator with a structured premium utility feeling: clear, tactile, friendly, and carefully finished without becoming ornamental.
 
 ## Direction
 
 The final design uses a refined Macintosh-inspired philosophy rather than a retro visual language. The interface favors a warm platinum canvas, a compact brand lockup, a deliberate result well, tactile squircle keys, blue operator controls, and a coral equals key.
 
 The goal is not nostalgia. The goal is to make a familiar calculator feel more considered, more ownable, and more portfolio-ready while preserving standard calculator behavior.
+
+The app is independent and is not affiliated with, endorsed by, or sponsored by Apple Inc.
 
 ## Product Identity
 
@@ -19,6 +21,7 @@ The goal is not nostalgia. The goal is to make a familiar calculator feel more c
 ## Final Assets
 
 - App icon: `assets/icon.png`
+- Archived previous release icon: `assets/icon-public-release-abstract.png`
 - Previous icon archive: `assets/icon-soft-precision.png`
 - Raw screenshots: `docs/screenshots/raw/`
 - App Store screenshot set: `docs/screenshots/app-store/`

@@ -34,6 +34,10 @@ export function getFormattedDisplay(state: CalculatorState) {
   return state.display;
 }
 
+export function clear(): CalculatorState {
+  return initialCalculatorState;
+}
+
 export function inputDigit(state: CalculatorState, digit: string): CalculatorState {
   if (state.display === ERROR_DISPLAY || state.waitingForNextInput) {
     return {
