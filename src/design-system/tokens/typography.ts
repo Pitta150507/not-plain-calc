@@ -16,20 +16,20 @@ export const typography = {
     utility: 21,
     key: 27,
     operator: 31,
-    resultLarge: 102,
-    result: 94,
-    resultMedium: 82,
-    resultCompact: 68,
+    resultLarge: 94,
+    result: 88,
+    resultMedium: 78,
+    resultCompact: 64,
     resultTiny: 52
   },
   lineHeight: {
     eyebrow: 18,
     expression: 20,
     key: 31,
-    resultLarge: 108,
-    result: 100,
-    resultMedium: 88,
-    resultCompact: 74,
+    resultLarge: 100,
+    result: 94,
+    resultMedium: 84,
+    resultCompact: 70,
     resultTiny: 58
   }
 } as const;

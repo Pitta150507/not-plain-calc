@@ -3,30 +3,30 @@ import { colors } from "./colors";
 export const shadows = {
   key: {
     shadowColor: colors.shadow,
-    shadowOffset: { width: 0, height: 7 },
-    shadowOpacity: 0.085,
-    shadowRadius: 13,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.08,
+    shadowRadius: 10,
     elevation: 2
   },
   utility: {
     shadowColor: colors.shadow,
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.075,
-    shadowRadius: 11,
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.07,
+    shadowRadius: 9,
     elevation: 2
   },
   operator: {
-    shadowColor: colors.shadow,
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.07,
-    shadowRadius: 11,
+    shadowColor: colors.pacificBlue,
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.12,
+    shadowRadius: 10,
     elevation: 2
   },
   operatorActive: {
-    shadowColor: colors.warmOrange,
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.16,
-    shadowRadius: 16,
+    shadowColor: colors.signalGreen,
+    shadowOffset: { width: 0, height: 7 },
+    shadowOpacity: 0.2,
+    shadowRadius: 14,
     elevation: 3
   },
   keyPressed: {
@@ -38,9 +38,9 @@ export const shadows = {
   },
   equals: {
     shadowColor: colors.warmOrange,
-    shadowOffset: { width: 0, height: 12 },
-    shadowOpacity: 0.3,
-    shadowRadius: 22,
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.24,
+    shadowRadius: 18,
     elevation: 3
   },
   equalsPressed: {

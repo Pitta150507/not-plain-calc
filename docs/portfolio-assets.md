@@ -1,38 +1,31 @@
 # Portfolio Assets
 
-## Screenshot Plan
+## Screenshot Set
 
-Capture GitHub and portfolio screenshots that show the product clearly without adding mock functionality:
+Release screenshots have been generated in two groups:
 
-1. **Default State**: app open with `0` displayed, showing the full calculator composition.
-2. **Active Operation**: an operator selected, with the active operator state visible.
-3. **Resolved Calculation**: a completed expression and result visible after pressing equals.
-4. **Compact Device**: the calculator on a smaller iPhone viewport to show responsive layout behavior.
-5. **Detail Crop**: close-up of the keypad depth, operator rail, and result display styling.
+- Raw simulator/product assets: `docs/screenshots/raw/`
+- App Store portrait frames: `docs/screenshots/app-store/`
 
-Recommended framing:
+Generated App Store frames:
 
-- Use real simulator screenshots, not recreated marketing mockups.
-- Keep the app centered with no extra UI overlays.
-- Capture at least one light background portfolio mockup after the raw screenshots are complete.
+1. `01-main-calculator.png`
+2. `02-clear-calculation.png`
+3. `03-premium-controls.png`
+4. `04-product-identity.png`
+5. `05-release-ready.png`
 
-## App Store Screenshot Plan
+## App Store Screenshot Notes
 
-Prepare screenshots for common iPhone sizes after the app is ready for distribution:
+Use the generated frames as the first release screenshot packet. They are sized at 1290 x 2796 and use restrained captions so the product remains the focus.
 
-1. **Main Calculator**: headline focus on the full app interface.
-2. **Soft Precision Controls**: show the tactile keypad, warm surfaces, and operator rail.
-3. **Clear Expression Flow**: show a multi-step calculation with expression context.
-4. **Designed for Reach**: show the ergonomic one-screen layout.
-5. **Polished Details**: show active operator, result styling, and readable typography.
+Caption direction:
 
-Suggested App Store captions:
-
-- "A calculator with a softer touch"
-- "Clear operations, calm controls"
-- "Designed for fast everyday math"
-- "Polished for iPhone"
-- "Not plain. Still precise."
+- "A precise calculator with a softer touch"
+- "Readable results, expression context, calm controls"
+- "Tactile keys, blue operators, coral equals"
+- "A small utility with a real product identity"
+- "Final UI, release icon, and focused test coverage"
 
 ## Portfolio Case Study Outline
 
@@ -49,7 +42,7 @@ Most calculator apps are either purely utilitarian or visually overdesigned. The
 
 ### 3. Design Direction
 
-Introduce **Soft Precision**: warm color, tactile depth, quiet motion, compact-device responsiveness, and reliable calculator behavior.
+Introduce **Friendly Precision**: warm platinum color, tactile depth, quiet motion, compact-device responsiveness, and reliable calculator behavior.
 
 ### 4. Interaction Decisions
 
@@ -67,10 +60,9 @@ Introduce **Soft Precision**: warm color, tactile depth, quiet motion, compact-d
 
 ### 6. Outcome
 
-A focused v1 product that demonstrates taste, restraint, implementation quality, and the ability to turn a simple utility into a portfolio-worthy mobile experience.
+A focused v1 product that demonstrates taste, restraint, implementation quality, release readiness, and the ability to turn a simple utility into a portfolio-worthy mobile experience.
 
 ### 7. Next Iteration
 
-- Add calculator logic tests.
-- Prepare store assets and TestFlight build.
-- Consider optional memory/history features only if they preserve the app's one-screen clarity.
+- Configure TestFlight credentials and submit the first build candidate.
+- Consider optional memory/history features only after the v1 release is stable.

@@ -9,7 +9,8 @@
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.notplain.calc"
+      "bundleIdentifier": "com.notplain.calc",
+      "buildNumber": "1"
     },
     "plugins": [
       "expo-router"

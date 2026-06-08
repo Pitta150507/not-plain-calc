@@ -57,12 +57,25 @@ export function CalculatorScreen() {
     <SafeAreaView style={styles.safeArea}>
       <View style={[styles.screen, isCompact && styles.compactScreen]}>
         <View style={styles.topBar}>
-          <Text maxFontSizeMultiplier={layout.textMaxFontMultiplier} style={styles.brand}>
-            Not Plain <Text style={styles.brandSoft}>Calc</Text>
-          </Text>
+          <View style={styles.brandLockup}>
+            <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={styles.monogram}>
+              <Text maxFontSizeMultiplier={layout.textMaxFontMultiplier} style={styles.monogramText}>
+                NP
+              </Text>
+            </View>
+            <View>
+              <Text maxFontSizeMultiplier={layout.textMaxFontMultiplier} style={styles.brand}>
+                Not Plain <Text style={styles.brandSoft}>Calc</Text>
+              </Text>
+              <Text maxFontSizeMultiplier={layout.textMaxFontMultiplier} style={styles.variant}>
+                Everyday Calculator
+              </Text>
+            </View>
+          </View>
           <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={styles.accentMark}>
             <View style={styles.accentDot} />
             <View style={styles.accentLine} />
+            <View style={styles.accentLineSoft} />
           </View>
         </View>
 
@@ -106,7 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
     flex: 1,
     maxWidth: layout.screenMaxWidth,
-    paddingBottom: spacing.lg,
+    paddingBottom: spacing.xxl,
     paddingHorizontal: layout.screenHorizontalPadding,
     width: "100%"
   },
@@ -119,51 +132,102 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     minHeight: layout.topBarMinHeight,
-    paddingTop: spacing.sm
+    paddingTop: spacing.md
+  },
+  brandLockup: {
+    alignItems: "center",
+    flexDirection: "row",
+    gap: spacing.md,
+    minWidth: 0
+  },
+  monogram: {
+    alignItems: "center",
+    backgroundColor: colors.chrome,
+    borderColor: colors.lineStrong,
+    borderRadius: 13,
+    borderWidth: 1,
+    height: 36,
+    justifyContent: "center",
+    shadowColor: colors.shadow,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.07,
+    shadowRadius: 8,
+    width: 36
+  },
+  monogramText: {
+    color: colors.text,
+    fontFamily: typography.family.regular,
+    fontSize: 12,
+    fontWeight: typography.weight.bold,
+    letterSpacing: 0,
+    lineHeight: 16
   },
   brand: {
     color: colors.text,
     fontFamily: typography.family.regular,
-    fontSize: typography.size.eyebrow,
+    fontSize: 14,
     fontWeight: typography.weight.bold,
     letterSpacing: 0,
-    lineHeight: typography.lineHeight.eyebrow
+    lineHeight: 18
   },
   brandSoft: {
     color: colors.textSoft,
     fontWeight: typography.weight.semibold
   },
+  variant: {
+    color: colors.textMuted,
+    fontFamily: typography.family.regular,
+    fontSize: 11,
+    fontWeight: typography.weight.semibold,
+    letterSpacing: 0,
+    lineHeight: 15
+  },
   accentMark: {
     alignItems: "center",
     flexDirection: "row",
-    gap: spacing.xs
+    gap: spacing.xs,
+    paddingLeft: spacing.sm
   },
   accentDot: {
-    backgroundColor: colors.marigold,
+    backgroundColor: colors.signalGreen,
     borderRadius: layout.accentDotSize,
     height: layout.accentDotSize,
     width: layout.accentDotSize
   },
   accentLine: {
-    backgroundColor: colors.warmOrange,
+    backgroundColor: colors.pacificBlue,
     borderRadius: layout.accentLineHeight,
     height: layout.accentLineHeight,
     width: layout.accentLineWidth
   },
+  accentLineSoft: {
+    backgroundColor: colors.marigold,
+    borderRadius: layout.accentLineHeight,
+    height: layout.accentLineHeight,
+    width: 12
+  },
   displayArea: {
     flex: 1,
-    justifyContent: "flex-end",
-    paddingTop: spacing.sm
-  },
-  keypad: {
-    flexDirection: "row",
-    gap: spacing.md,
-    paddingBottom: spacing.sm,
+    justifyContent: "center",
+    paddingBottom: spacing.xl,
     paddingTop: spacing.md
   },
+  keypad: {
+    backgroundColor: colors.keypadPlate,
+    borderColor: colors.line,
+    borderRadius: 22,
+    borderWidth: 1,
+    flexDirection: "row",
+    gap: spacing.md,
+    padding: spacing.md,
+    shadowColor: colors.shadow,
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.04,
+    shadowRadius: 16
+  },
   compactKeypad: {
+    borderRadius: 16,
     gap: spacing.sm,
-    paddingBottom: spacing.xs,
-    paddingTop: spacing.sm
+    padding: spacing.sm
   }
 });

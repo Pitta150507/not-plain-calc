@@ -43,10 +43,10 @@ export function OperatorRail({ activeOperator, isCompact = false, onOperator, on
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "transparent",
-    borderRadius: radius.xxl,
+    borderRadius: radius.xl,
     gap: spacing.md,
     justifyContent: "flex-start",
-    paddingHorizontal: spacing.xxs,
+    paddingHorizontal: spacing.none,
     position: "relative",
     width: layout.operatorRailWidth
   },
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
     bottom: spacing.xl,
     position: "absolute",
-    right: spacing.xs,
+    right: -spacing.xxs,
     top: spacing.xl,
     width: 2
   },

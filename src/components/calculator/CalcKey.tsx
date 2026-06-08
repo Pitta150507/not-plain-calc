@@ -52,6 +52,7 @@ export function CalcKey({
       <Pressable
         accessibilityLabel={accessibilityLabel}
         accessibilityRole="button"
+        accessibilityState={isActive ? { selected: true } : undefined}
         onPress={onPress}
         onPressIn={pressIn}
         onPressOut={pressOut}
@@ -153,21 +154,21 @@ const styles = StyleSheet.create({
   },
   standard: {
     height: layout.keyHeight,
-    borderRadius: radius.xl
+    borderRadius: radius.lg
   },
   wide: {
     height: layout.keyHeight,
-    borderRadius: radius.xl
+    borderRadius: radius.lg
   },
   compact: {
     height: layout.compactKeyHeight,
     minHeight: layout.compactKeyMinHeight,
-    borderRadius: radius.lg
+    borderRadius: radius.md
   },
   tall: {
     flex: 1,
     minHeight: layout.tallKeyMinHeight,
-    borderRadius: radius.xl
+    borderRadius: radius.lg
   },
   number: {
     backgroundColor: colors.surface,
@@ -178,8 +179,8 @@ const styles = StyleSheet.create({
     borderColor: colors.lineStrong
   },
   operator: {
-    backgroundColor: colors.surfaceRaised,
-    borderColor: colors.warmOrangeSoft
+    backgroundColor: colors.chrome,
+    borderColor: colors.operatorThread
   },
   equals: {
     backgroundColor: colors.warmOrange,
@@ -187,7 +188,7 @@ const styles = StyleSheet.create({
   },
   active: {
     backgroundColor: colors.warmOrangePale,
-    borderColor: colors.warmOrange
+    borderColor: colors.signalGreen
   },
   pressed: {
     backgroundColor: colors.surfacePressed,
@@ -198,30 +199,30 @@ const styles = StyleSheet.create({
     borderColor: colors.lineStrong
   },
   operatorPressed: {
-    backgroundColor: colors.warmOrangeSoft,
-    borderColor: colors.warmOrange
+    backgroundColor: colors.resultSurfaceInset,
+    borderColor: colors.signalGreen
   },
   equalsPressed: {
     backgroundColor: colors.warmOrangePressed,
     borderColor: colors.warmOrangePressed
   },
   standardRadius: {
-    borderRadius: radius.xl
+    borderRadius: radius.lg
   },
   wideRadius: {
-    borderRadius: radius.xl
+    borderRadius: radius.lg
   },
   compactRadius: {
-    borderRadius: radius.lg
+    borderRadius: radius.md
   },
   topLight: {
     borderRadius: radius.pill,
-    height: 1.5,
-    left: 22,
-    opacity: 0.86,
+    height: 1,
+    left: 12,
+    opacity: 0.9,
     position: "absolute",
-    right: 22,
-    top: 8
+    right: 12,
+    top: 6
   },
   defaultTopLight: {
     backgroundColor: colors.buttonTopLight
@@ -235,7 +236,7 @@ const styles = StyleSheet.create({
   },
   bottomShade: {
     bottom: 0,
-    height: 6,
+    height: 4,
     left: 0,
     position: "absolute",
     right: 0
@@ -252,15 +253,15 @@ const styles = StyleSheet.create({
   activeInset: {
     backgroundColor: colors.operatorActiveGlow,
     borderRadius: radius.pill,
-    bottom: 7,
+    bottom: 6,
     height: 4,
-    left: 22,
+    left: 14,
     position: "absolute",
-    right: 22
+    right: 14
   },
   label: {
     color: colors.text,
-    fontFamily: typography.family.rounded,
+    fontFamily: typography.family.regular,
     fontSize: typography.size.key,
     fontVariant: ["tabular-nums"],
     fontWeight: typography.weight.semibold,
@@ -277,14 +278,14 @@ const styles = StyleSheet.create({
     fontSize: typography.size.utility
   },
   operatorLabel: {
-    color: colors.warmOrange,
+    color: colors.pacificBlue,
     fontSize: typography.size.operator
   },
   activeOperatorLabel: {
-    color: colors.warmOrange
+    color: colors.signalGreen
   },
   equalsLabel: {
-    color: colors.surface,
+    color: colors.resultSurface,
     fontSize: typography.size.operator
   }
 });

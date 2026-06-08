@@ -7,7 +7,7 @@ import Animated, {
   withSequence,
   withSpring
 } from "react-native-reanimated";
-import { colors, layout, motion, spacing, typography } from "@/design-system/tokens";
+import { colors, layout, motion, radius, spacing, typography } from "@/design-system/tokens";
 
 type ResultDisplayProps = {
   display: string;
@@ -48,10 +48,17 @@ export function ResultDisplay({ display, expression, isCompact = false, resolveS
   return (
     <View
       accessibilityLabel={`${expression}. Result ${display}`}
+      accessibilityLiveRegion="polite"
+      accessibilityRole="text"
       accessible
       style={[styles.container, isCompact && styles.compactContainer]}
     >
       <Animated.View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[styles.resultAura, auraStyle]} />
+      <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={styles.displayHeader}>
+        <View style={[styles.displayTick, styles.displayTickActive]} />
+        <View style={styles.displayTick} />
+        <View style={styles.displayTick} />
+      </View>
       <Text ellipsizeMode="head" maxFontSizeMultiplier={layout.textMaxFontMultiplier} numberOfLines={1} style={styles.expression}>
         {expression}
       </Text>
@@ -115,27 +122,55 @@ function getResultTypography(display: string, isCompact: boolean) {
 const styles = StyleSheet.create({
   container: {
     alignItems: "stretch",
+    backgroundColor: colors.resultSurface,
+    borderColor: colors.line,
+    borderRadius: 22,
+    borderWidth: 1,
     justifyContent: "flex-end",
-    minHeight: 176,
+    minHeight: 154,
     paddingBottom: spacing.lg,
-    paddingHorizontal: spacing.sm,
-    paddingTop: spacing.displayGap,
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing.sm,
     position: "relative",
+    shadowColor: colors.shadow,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.04,
+    shadowRadius: 14,
     width: "100%"
   },
   compactContainer: {
-    minHeight: 128,
-    paddingBottom: spacing.md,
-    paddingTop: spacing.lg
+    borderRadius: 16,
+    minHeight: 116,
+    paddingBottom: spacing.sm,
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.sm
   },
   resultAura: {
     backgroundColor: colors.resultWash,
-    borderRadius: 44,
-    bottom: spacing.sm,
-    left: spacing.lg,
+    borderRadius: 18,
+    bottom: spacing.md,
+    left: spacing.md,
     position: "absolute",
-    right: spacing.lg,
-    top: spacing.xl
+    right: spacing.md,
+    top: 34
+  },
+  displayHeader: {
+    alignItems: "center",
+    flexDirection: "row",
+    gap: spacing.xs,
+    marginBottom: spacing.md
+  },
+  displayTick: {
+    backgroundColor: colors.lineStrong,
+    borderRadius: radius.pill,
+    height: 4,
+    opacity: 0.6,
+    width: 12
+  },
+  displayTickActive: {
+    backgroundColor: colors.signalGreen,
+    opacity: 1,
+    width: 24
   },
   expression: {
     color: colors.textSoft,
@@ -150,7 +185,7 @@ const styles = StyleSheet.create({
   },
   result: {
     color: colors.text,
-    fontFamily: typography.family.rounded,
+    fontFamily: typography.family.regular,
     fontVariant: ["tabular-nums"],
     includeFontPadding: false,
     textAlign: "right",
@@ -159,7 +194,7 @@ const styles = StyleSheet.create({
   resultFrame: {
     alignItems: "flex-end",
     justifyContent: "flex-end",
-    minHeight: typography.lineHeight.resultLarge,
+    minHeight: typography.lineHeight.result,
     overflow: "hidden",
     width: "100%"
   }

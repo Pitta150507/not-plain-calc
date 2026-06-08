@@ -1,18 +1,18 @@
 # Not Plain Calc
 
-Not Plain Calc is a polished mobile calculator built with Expo and React Native. It focuses on the familiar speed of a standard calculator while giving every interaction a softer, more intentional feel.
+Not Plain Calc is a polished mobile calculator built with Expo and React Native. It keeps the familiar speed of a standard calculator while giving the product a softer, more intentional Apple utility feeling.
 
 ## Hero Description
 
-A calculator does not need to look generic to feel reliable. Not Plain Calc combines precise arithmetic flows, tactile controls, responsive typography, and restrained motion into a small iOS-first product that feels calm, warm, and carefully finished.
+A calculator does not need to look generic to feel reliable. Not Plain Calc combines precise arithmetic flows, tactile controls, responsive typography, accessibility-minded interaction states, and restrained motion into a small iOS-first product that feels calm, structured, and carefully finished.
 
-## Design Philosophy: Soft Precision
+## Design Philosophy: Friendly Precision
 
-Soft Precision is the visual and interaction direction behind the app:
+Friendly Precision is the visual and interaction direction behind the app:
 
-- **Soft**: warm surfaces, rounded forms, gentle depth, readable hierarchy, and haptics that support the action instead of calling attention to themselves.
+- **Friendly**: warm platinum surfaces, tactile squircle controls, gentle depth, readable hierarchy, and haptics that support the action instead of calling attention to themselves.
 - **Precision**: strict input limits, predictable operator behavior, accessible labels, compact-screen adaptation, and display formatting that protects legibility.
-- **Not plain**: small visual details such as the operator rail, result aura, active operator state, and press depth give the app a memorable identity without changing the expected calculator mental model.
+- **Not plain**: small visual details such as the blue operator rail, coral equals key, result well, active operator state, and press depth give the app a memorable identity without changing the expected calculator mental model.
 
 ## Features
 
@@ -22,6 +22,7 @@ Soft Precision is the visual and interaction direction behind the app:
 - Animated press states and result resolution feedback with reduced-motion support.
 - Native haptic feedback for number, utility, operator, and equals interactions.
 - Accessible button labels and result announcements.
+- Focused unit tests for arithmetic, formatting, and calculator state transitions.
 - Centralized design tokens for color, spacing, typography, motion, shadows, radius, and layout.
 
 ## Tech Stack
@@ -99,6 +100,12 @@ Run type checking:
 npm run typecheck
 ```
 
+Run unit tests:
+
+```bash
+npm test
+```
+
 Validate Expo package compatibility:
 
 ```bash
@@ -107,11 +114,9 @@ npx expo install --check
 
 ## Roadmap
 
-- Capture production screenshots for GitHub, portfolio, and App Store use.
-- Add focused calculator logic tests for arithmetic, formatting, percent behavior, and edge cases.
-- Prepare an EAS build profile for TestFlight distribution.
-- Add app metadata, privacy copy, and store listing materials.
-- Explore optional v2 interactions only after the v1 behavior is fully locked.
+- Configure Apple Developer credentials for TestFlight.
+- Create the App Store Connect record and upload screenshots.
+- Explore optional v2 interactions only after the v1 release is fully locked.
 
 ## Lessons Learned
 
