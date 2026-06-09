@@ -45,6 +45,6 @@ Not Plain Calc is an independent app. It is not affiliated with, endorsed by, or
 
 ## Contact
 
-Support URL: `https://example.com/support`
+Support URL: `https://pitta150507.github.io/not-plain-calc/support.html`
 
-This placeholder should be replaced with a real support URL before App Store submission.
+This URL assumes GitHub Pages is enabled for the `main` branch using the `/docs` folder.

@@ -20,6 +20,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "8811cf3a-7905-45b4-8f00-302b6b96783b"
+      }
+    },
+    "owner": "andrea_bertoldo"
   }
 }

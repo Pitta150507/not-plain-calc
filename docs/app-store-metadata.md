@@ -44,11 +44,13 @@ Avoid App Store wording that calls the product a "Macintosh app" or suggests off
 
 ## URLs
 
-Support URL: `https://example.com/support`
+Support URL: `https://pitta150507.github.io/not-plain-calc/support.html`
 
-Marketing URL: `https://example.com/not-plain-calc`
+Marketing URL: `https://pitta150507.github.io/not-plain-calc/`
 
-Replace both placeholders before App Store submission.
+Privacy Policy URL: `https://pitta150507.github.io/not-plain-calc/privacy.html`
+
+These URLs assume GitHub Pages is enabled for the `main` branch using the `/docs` folder.
 
 ## Screenshot Plan
 
@@ -62,7 +64,7 @@ Use the generated screenshots in `docs/screenshots/app-store/`:
 
 ## Icon Checklist
 
-- Original artwork.
+- Final icon artwork installed at `assets/icon.png`.
 - No Apple logos.
 - No Macintosh computer reproduction.
 - No old system-window recreation.
@@ -70,13 +72,17 @@ Use the generated screenshots in `docs/screenshots/app-store/`:
 - Recognizable at 60 x 60.
 - Connected to the app UI.
 
+Final direction: `docs/icon-concepts/product-recognition-final/candidate-e-disciplined-product-crop.png`.
+
 ## TestFlight Checklist
 
 - Apple Developer account active.
 - App Store Connect app record created.
 - Bundle ID confirmed: `com.notplain.calc`.
-- Support URL replaced.
-- Marketing URL replaced or omitted if allowed.
+- Final approved icon installed in `assets/icon.png`.
+- Support URL published.
+- Marketing URL published or omitted if allowed.
+- Privacy Policy URL published.
 - Apple privacy labels completed as Data Not Collected.
 - `npm test` passes.
 - `npm run typecheck` passes.

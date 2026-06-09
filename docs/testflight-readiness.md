@@ -2,7 +2,7 @@
 
 ## Current Status
 
-Not Plain Calc is ready for a TestFlight build candidate after EAS and Apple Developer credentials are configured.
+Not Plain Calc is close to a TestFlight build candidate. EAS is configured and the final app icon is installed. The public pages must still be published through GitHub Pages before Public TestFlight metadata is complete.
 
 ## Completed
 
@@ -16,10 +16,13 @@ Not Plain Calc is ready for a TestFlight build candidate after EAS and Apple Dev
 - Result display exposes a text role and polite live region.
 - Release screenshot set generated at App Store portrait dimensions.
 - Privacy policy draft and App Store metadata draft are available in `docs/`.
+- EAS project is linked: `8811cf3a-7905-45b4-8f00-302b6b96783b`.
+- Static GitHub Pages source files are available in `docs/`.
 
 ## Build Checklist
 
 - Confirm Apple Developer Team and bundle identifier: `com.notplain.calc`.
+- Confirm final approved app icon is installed at `assets/icon.png`.
 - Run `npm test`.
 - Run `npm run typecheck`.
 - Run `npx expo install --check`.
@@ -47,8 +50,8 @@ Not Plain Calc is independent and is not affiliated with, endorsed by, or sponso
 
 ## Remaining External Work
 
-- Configure EAS/Apple credentials.
+- Enable GitHub Pages from `main` branch `/docs` folder.
 - Create the App Store Connect app record.
 - Upload screenshots from `docs/screenshots/app-store/`.
 - Complete Apple privacy nutrition labels.
-- Replace placeholder support and marketing URLs.
+- Confirm the support, marketing, and privacy URLs are live.

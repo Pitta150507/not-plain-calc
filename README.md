@@ -143,6 +143,8 @@ npx expo install --check
 - Privacy policy draft: `docs/privacy-policy.md`
 - App Store metadata draft: `docs/app-store-metadata.md`
 - TestFlight readiness: `docs/testflight-readiness.md`
+- GitHub Pages setup: `docs/github-pages.md`
+- Public pages source: `docs/index.html`, `docs/privacy.html`, `docs/support.html`
 - App Store screenshots: `docs/screenshots/app-store/`
 
 ## Roadmap

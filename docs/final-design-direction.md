@@ -21,7 +21,9 @@ The app is independent and is not affiliated with, endorsed by, or sponsored by 
 ## Final Assets
 
 - App icon: `assets/icon.png`
+- Final icon direction: product-recognition crop from the Macintosh Refined interface, combining the inset display well, keypad plate structure, physical key geometry, and coral equals key.
 - Archived previous release icon: `assets/icon-public-release-abstract.png`
+- Archived rejected random-keypad icon: `assets/icon-rejected-random-keypad.png`
 - Previous icon archive: `assets/icon-soft-precision.png`
 - Raw screenshots: `docs/screenshots/raw/`
 - App Store screenshot set: `docs/screenshots/app-store/`
