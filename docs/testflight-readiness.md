@@ -2,7 +2,7 @@
 
 ## Current Status
 
-Not Plain Calc is close to a TestFlight build candidate. EAS is configured and the final app icon is installed. The public pages must still be published through GitHub Pages before Public TestFlight metadata is complete.
+Not Plain Calc is close to a TestFlight build candidate. EAS is configured, GitHub Pages is live, and the final app icon is installed. The current blocker is Apple Developer two-factor authentication during iOS credential generation.
 
 ## Completed
 
@@ -17,7 +17,10 @@ Not Plain Calc is close to a TestFlight build candidate. EAS is configured and t
 - Release screenshot set generated at App Store portrait dimensions.
 - Privacy policy draft and App Store metadata draft are available in `docs/`.
 - EAS project is linked: `8811cf3a-7905-45b4-8f00-302b6b96783b`.
-- Static GitHub Pages source files are available in `docs/`.
+- GitHub Pages is configured from the `main` branch `/docs` folder.
+- Marketing URL is live: `https://pitta150507.github.io/not-plain-calc/`.
+- Privacy URL is live: `https://pitta150507.github.io/not-plain-calc/privacy.html`.
+- Support URL is live: `https://pitta150507.github.io/not-plain-calc/support.html`.
 
 ## Build Checklist
 
@@ -28,7 +31,13 @@ Not Plain Calc is close to a TestFlight build candidate. EAS is configured and t
 - Run `npx expo install --check`.
 - Run an iOS simulator smoke test.
 - Build with `eas build --platform ios --profile production`.
-- Submit the generated build to TestFlight only after explicit human approval.
+- Submit the generated build to TestFlight after the build completes and App Store Connect credentials are available.
+
+## Current Blocker
+
+`eas build --platform ios --profile production` reaches Apple Developer login and requires the 6-digit two-factor authentication code for `bertoldo_andrea@icloud.com`.
+
+Without that code, EAS cannot generate or validate the iOS distribution certificate and provisioning profile needed for the production iOS build.
 
 ## App Store Metadata Draft
 
@@ -50,8 +59,7 @@ Not Plain Calc is independent and is not affiliated with, endorsed by, or sponso
 
 ## Remaining External Work
 
-- Enable GitHub Pages from `main` branch `/docs` folder.
 - Create the App Store Connect app record.
 - Upload screenshots from `docs/screenshots/app-store/`.
 - Complete Apple privacy nutrition labels.
-- Confirm the support, marketing, and privacy URLs are live.
+- Complete Apple Developer 2FA during the next EAS build attempt.
