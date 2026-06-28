@@ -147,6 +147,11 @@ npx expo install --check
 - Public pages source: `docs/index.html`, `docs/privacy.html`, `docs/support.html`
 - App Store screenshots: `docs/screenshots/app-store/`
 
+## Portfolio Case Study
+
+Read the full design and engineering case study here:
+[Not Plain Calc Case Study](docs/portfolio-case-study/index.md)
+
 ## Roadmap
 
 - Configure Apple Developer credentials for TestFlight.
