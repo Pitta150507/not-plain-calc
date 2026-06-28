@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="760" viewBox="0 0 1500 760" role="img" aria-labelledby="title desc">
+  <title id="title">Not Plain Calc color system</title><desc id="desc">The warm neutral surfaces and green, blue, marigold, and coral semantic accents used by the final calculator.</desc>
+  <style>.bg{fill:#F7F2E8}.title{font:800 44px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1D1C18}.k{font:700 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5E8F72;letter-spacing:3px}.h{font:700 21px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1D1C18}.b{font:500 16px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#665F54}.card{fill:#FDFBF6;stroke:#DDD5C7;stroke-width:2}</style>
+  <rect class="bg" width="1500" height="760"/><text class="k" x="80" y="80">MATERIAL PALETTE</text><text class="title" x="80" y="138">Warm surfaces, restrained signals</text>
+  <g transform="translate(80 220)">
+    <g transform="translate(0)"><rect class="card" width="205" height="360" rx="28"/><rect width="205" height="220" rx="28" fill="#F7F2E8"/><text class="h" x="22" y="270">Background</text><text class="b" x="22" y="308">#F7F2E8</text><text class="b" x="22" y="340">canvas</text></g>
+    <g transform="translate(225)"><rect class="card" width="205" height="360" rx="28"/><rect width="205" height="220" rx="28" fill="#FDFBF6"/><text class="h" x="22" y="270">Result</text><text class="b" x="22" y="308">#FDFBF6</text><text class="b" x="22" y="340">readout</text></g>
+    <g transform="translate(450)"><rect class="card" width="205" height="360" rx="28"/><rect width="205" height="220" rx="28" fill="#F0ECE3"/><text class="h" x="22" y="270">Keypad</text><text class="b" x="22" y="308">#F0ECE3</text><text class="b" x="22" y="340">grouping</text></g>
+    <g transform="translate(675)"><rect class="card" width="205" height="360" rx="28"/><rect width="205" height="220" rx="28" fill="#5E8F72"/><text class="h" x="22" y="270">Signal</text><text class="b" x="22" y="308">#5E8F72</text><text class="b" x="22" y="340">active state</text></g>
+    <g transform="translate(900)"><rect class="card" width="205" height="360" rx="28"/><rect width="205" height="220" rx="28" fill="#4F7198"/><text class="h" x="22" y="270">Pacific</text><text class="b" x="22" y="308">#4F7198</text><text class="b" x="22" y="340">operators</text></g>
+    <g transform="translate(1125)"><rect class="card" width="205" height="360" rx="28"/><rect width="205" height="220" rx="28" fill="#C9623D"/><text class="h" x="22" y="270">Coral</text><text class="b" x="22" y="308">#C9623D</text><text class="b" x="22" y="340">equals</text></g>
+  </g>
+  <text class="h" x="80" y="660">Color has a job</text><text class="b" x="80" y="700">Neutral = structure   Blue = operation   Green = selected   Coral = resolution</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">Calculator state machine</title>
+  <desc id="desc">State transitions between entering a first value, choosing an operator, entering a second value, resolving a result, and recovering from undefined division.</desc>
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#242119" flood-opacity=".12"/></filter>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#4F7198"/></marker>
+    <style>.bg{fill:#F7F2E8}.node{fill:#FDFBF6;stroke:#DDD5C7;stroke-width:3}.active{fill:#EDF5F0;stroke:#5E8F72}.error{fill:#FFF0E8;stroke:#C9623D}.title{font:800 46px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1D1C18}.k{font:700 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5E8F72;letter-spacing:3px}.h{font:700 24px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1D1C18}.b{font:500 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#665F54}.edge{fill:none;stroke:#4F7198;stroke-width:4;marker-end:url(#a)}.edge2{fill:none;stroke:#C9623D;stroke-width:4;marker-end:url(#a)}.el{font:700 17px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#4F7198}</style>
+  </defs>
+  <rect class="bg" width="1600" height="920"/>
+  <text class="k" x="90" y="80">PURE DOMAIN LOGIC</text>
+  <text class="title" x="90" y="140">Calculation is modeled as state, not UI events</text>
+  <g filter="url(#shadow)">
+    <rect class="node active" x="90" y="310" width="270" height="160" rx="34"/>
+    <text class="h" x="225" y="365" text-anchor="middle">Entering value</text><text class="b" x="225" y="405" text-anchor="middle">display = "0"</text><text class="b" x="225" y="435" text-anchor="middle">operator = null</text>
+    <rect class="node" x="470" y="310" width="270" height="160" rx="34"/>
+    <text class="h" x="605" y="365" text-anchor="middle">Operator chosen</text><text class="b" x="605" y="405" text-anchor="middle">storedValue set</text><text class="b" x="605" y="435" text-anchor="middle">waiting = true</text>
+    <rect class="node" x="850" y="310" width="270" height="160" rx="34"/>
+    <text class="h" x="985" y="365" text-anchor="middle">Second value</text><text class="b" x="985" y="405" text-anchor="middle">next digit replaces</text><text class="b" x="985" y="435" text-anchor="middle">the previous display</text>
+    <rect class="node active" x="1230" y="310" width="270" height="160" rx="34"/>
+    <text class="h" x="1365" y="365" text-anchor="middle">Resolved</text><text class="b" x="1365" y="405" text-anchor="middle">result formatted</text><text class="b" x="1365" y="435" text-anchor="middle">expression retained</text>
+    <rect class="node error" x="665" y="660" width="270" height="150" rx="34"/>
+    <text class="h" x="800" y="718" text-anchor="middle">Undefined</text><text class="b" x="800" y="758" text-anchor="middle">division by zero</text><text class="b" x="800" y="788" text-anchor="middle">clear or type to recover</text>
+  </g>
+  <path class="edge" d="M360 390H470"/><text class="el" x="415" y="370" text-anchor="middle">operator</text>
+  <path class="edge" d="M740 390H850"/><text class="el" x="795" y="370" text-anchor="middle">digit</text>
+  <path class="edge" d="M1120 390H1230"/><text class="el" x="1175" y="370" text-anchor="middle">equals</text>
+  <path class="edge" d="M1365 470 C1365 565 225 565 225 470"/><text class="el" x="1365" y="535" text-anchor="end">next digit starts fresh</text>
+  <path class="edge" d="M985 310 C985 230 605 230 605 310"/><text class="el" x="795" y="215" text-anchor="middle">another operator resolves and chains</text>
+  <path class="edge2" d="M985 470 C985 590 800 590 800 660"/><text class="el" x="940" y="585" text-anchor="middle">divide by 0</text>
+  <path class="edge" d="M665 735 C500 735 225 650 225 470"/><text class="el" x="405" y="700" text-anchor="middle">clear / new input</text>
+</svg>
