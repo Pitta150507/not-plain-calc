@@ -8,7 +8,7 @@ A calculator does not need to look generic to feel reliable. Not Plain Calc comb
 
 ## Release Status
 
-Not Plain Calc v1.0 is prepared as a public GitHub release and TestFlight-ready build candidate. It is not yet submitted to Apple. Final TestFlight and App Store submission still require human setup for Apple Developer credentials, App Store Connect metadata, support/marketing URLs, and Apple privacy labels.
+Not Plain Calc v1.0 is published on GitHub and available as a public beta through TestFlight. The signed iOS build was uploaded to App Store Connect after completing Apple Developer credentials and EAS signing. A production App Store release remains a separate future step.
 
 ## Design Philosophy: Friendly Precision
 
@@ -142,7 +142,7 @@ npx expo install --check
 - Release audit: `docs/release-audit.md`
 - Privacy policy draft: `docs/privacy-policy.md`
 - App Store metadata draft: `docs/app-store-metadata.md`
-- TestFlight readiness: `docs/testflight-readiness.md`
+- TestFlight status: `docs/testflight-readiness.md`
 - GitHub Pages setup: `docs/github-pages.md`
 - Public pages source: `docs/index.html`, `docs/privacy.html`, `docs/support.html`
 - App Store screenshots: `docs/screenshots/app-store/`
@@ -154,8 +154,9 @@ Read the full design and engineering case study here:
 
 ## Roadmap
 
-- Configure Apple Developer credentials for TestFlight.
-- Create the App Store Connect record and upload screenshots.
+- Gather feedback from the public TestFlight beta.
+- Complete the final device and accessibility regression pass.
+- Prepare the production App Store submission after beta validation.
 - Explore optional v2 interactions only after the v1 release is fully locked.
 
 ## Lessons Learned

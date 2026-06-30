@@ -62,9 +62,9 @@ Introduce **Friendly Precision**: warm platinum color, tactile depth, quiet moti
 
 ### 6. Outcome
 
-A focused v1 product that demonstrates taste, restraint, implementation quality, release readiness, and the ability to turn a simple utility into a portfolio-worthy mobile experience.
+A focused v1 product that demonstrates taste, restraint, implementation quality, public TestFlight delivery, and the ability to turn a simple utility into a portfolio-worthy mobile experience.
 
 ### 7. Next Iteration
 
-- Configure TestFlight credentials and submit the first build candidate.
+- Gather feedback from the public TestFlight beta and prepare the production App Store submission.
 - Consider optional memory/history features only after the v1 release is stable.

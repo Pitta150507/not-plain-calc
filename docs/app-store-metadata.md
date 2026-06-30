@@ -1,6 +1,6 @@
 # App Store Metadata Draft
 
-Do not submit this automatically. Use this as a human-reviewed draft for App Store Connect.
+This metadata draft is retained for the production App Store release. A signed build is already available through a public TestFlight beta.
 
 ## Product
 
@@ -74,7 +74,7 @@ Use the generated screenshots in `docs/screenshots/app-store/`:
 
 Final direction: `docs/icon-concepts/product-recognition-final/candidate-e-disciplined-product-crop.png`.
 
-## TestFlight Checklist
+## Completed TestFlight Checklist
 
 - Apple Developer account active.
 - App Store Connect app record created.
@@ -89,3 +89,5 @@ Final direction: `docs/icon-concepts/product-recognition-final/candidate-e-disci
 - `npx expo install --check` passes.
 - EAS credentials configured.
 - Production build created with `eas build --platform ios --profile production`.
+- Signed build uploaded to App Store Connect.
+- Public TestFlight beta enabled.

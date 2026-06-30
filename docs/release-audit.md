@@ -113,6 +113,6 @@ Latest local checks:
 
 ## App Store Readiness Score
 
-Score: 8.4 / 10
+Historical pre-upload score: 8.4 / 10
 
-Ready for public GitHub release. Ready for TestFlight build preparation after Apple Developer credentials and App Store Connect setup. Not ready for App Store submission until human legal/privacy review, support URL, marketing URL, and Apple privacy labels are completed.
+The public GitHub release and public TestFlight beta are live. The earlier Apple credential blocker was resolved and the signed build was uploaded to App Store Connect. Production App Store release remains separate from beta distribution and should follow final legal, privacy, metadata, and device review.

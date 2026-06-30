@@ -2,14 +2,14 @@
 
 ![Not Plain Calc shown in its App Store presentation frame](screenshots/01-hero-main.png)
 
-> A product design and React Native engineering case study about turning the most familiar utility on a phone into a small, coherent product. The app is complete as a local release candidate. Its source, public pages, privacy materials, and store assets are published; the signed iOS build is not yet on TestFlight because Apple credential setup still requires account-owner authentication.
+> A product design and React Native engineering case study about turning the most familiar utility on a phone into a small, coherent product. The source, public pages, privacy materials, and store assets are published. The signed iOS build is uploaded to App Store Connect and available through a public TestFlight beta.
 
 | Project | Not Plain Calc v1.0 |
 |---|---|
 | Roles | Product Designer, iOS Developer, Software Engineer |
 | Platform | iPhone, built with Expo and React Native |
 | Documented release sprint | June 8 to June 9, 2026 |
-| Status | Public GitHub release candidate; TestFlight upload pending |
+| Status | Public GitHub repository; public TestFlight beta live |
 | Repository | [github.com/Pitta150507/not-plain-calc](https://github.com/Pitta150507/not-plain-calc) |
 | Live product page | [pitta150507.github.io/not-plain-calc](https://pitta150507.github.io/not-plain-calc/) |
 
@@ -63,7 +63,7 @@ The first goal was behavioral reliability. Calculator state has awkward edges: l
 
 The second goal was product identity. I wanted the interface to be recognizable without a logo pasted on top. This eventually shaped the app icon as well.
 
-The third goal was release discipline. The repository includes tests, strict type checking, EAS configuration, App Store metadata, privacy and support pages, an IP review, and a documented shipping blocker. The final step remains external: authenticate the Apple Developer account, create the App Store Connect record, build the signed binary, and upload it to TestFlight.
+The third goal was release discipline. The repository includes tests, strict type checking, EAS configuration, App Store metadata, privacy and support pages, an IP review, and a documented shipping blocker. That Apple credential blocker was later resolved. EAS produced the signed binary, App Store Connect received it, and TestFlight now distributes the public beta.
 
 ### Timeline and status
 
@@ -80,6 +80,8 @@ The public Git history begins on June 8, 2026 with the complete v1 source. It do
 | Jun 9, 02:23 | `b2ed796` | Published GitHub Pages, store metadata, icon explorations, support and privacy pages. |
 | Jun 9, 21:25 | `8287c54` | Recorded the Apple 2FA credential blocker instead of implying a successful upload. |
 
+The final row records a real blocker at that point in the release. It was later resolved and the app reached public TestFlight beta. The exact beta publication date was not retained in this repository, so the timeline does not invent one.
+
 ### Technologies
 
 | Area | Technology |
@@ -91,7 +93,7 @@ The public Git history begins on June 8, 2026 with the complete v1 source. It do
 | Native feedback | Expo Haptics |
 | State and arithmetic | Pure TypeScript state machine and formatter |
 | Testing | Vitest 4 |
-| Build and distribution | EAS Build configuration, App Store Connect preparation |
+| Build and distribution | EAS Build, App Store Connect, public TestFlight beta |
 | Public documentation | GitHub Pages |
 
 ### Release status
@@ -100,9 +102,10 @@ The public Git history begins on June 8, 2026 with the complete v1 source. It do
 - App version: `1.0.0`, build number `1`.
 - Git tags: none. The release version is declared in source and commit history, not represented by a tag.
 - Public pages: marketing, privacy, and support URLs are live.
-- TestFlight: not uploaded.
-- Current blocker: Apple Developer 2FA during distribution certificate and provisioning profile setup.
-- Remaining work: App Store Connect record, privacy labels, signed production build, upload, and physical-device acceptance testing.
+- TestFlight: public beta active.
+- App Store Connect: signed iOS build uploaded.
+- Apple signing: credentials and provisioning completed after resolving the earlier 2FA blocker.
+- Remaining work: beta feedback, final accessibility regression, and a separate production App Store submission.
 
 ---
 
@@ -428,19 +431,19 @@ npx expo install --check
 
 [`eas.json`](../../eas.json) requires EAS CLI 14 or newer, keeps app versioning local, defines an internal development client, and defines a production iOS device build. [`app.json`](../../app.json) contains the Expo project ID, owner, bundle identifier, build number, portrait orientation, and the `usesNonExemptEncryption: false` declaration.
 
-The next production command is:
+The production build used:
 
 ```bash
 eas build --platform ios --profile production
 ```
 
-That command reached Apple Developer authentication but did not complete certificate and profile setup because the account required a six-digit 2FA code.
+The first attempt reached Apple Developer authentication and stopped for a six-digit 2FA code. After the account owner completed authentication, EAS generated the signing credentials, completed the production build, and supplied the binary uploaded to App Store Connect and TestFlight.
 
 ### Git workflow
 
-The public repository uses a linear six-commit history on `main`. Commits are scoped around release outcomes: source release, redesign and test preparation, audit, export compliance, public assets, and blocker documentation.
+The product release sprint uses a linear six-commit sequence on `main`. Those commits are scoped around release outcomes: source release, redesign and test preparation, audit, export compliance, public assets, and blocker documentation. Later commits publish and correct this portfolio material.
 
-This history is easy to review, but it has one weakness: the first public commit is already a large finished snapshot. A stronger future workflow would preserve discovery earlier, use smaller feature branches, and tag `v1.0.0` once the binary is accepted. The current history proves the release sprint; it does not prove the full design timeline.
+This history is easy to review, but it has one weakness: the first public commit is already a large finished snapshot. A stronger future workflow would preserve discovery earlier, use smaller feature branches, and tag `v1.0.0` once the production App Store version is accepted. The current history proves the release sprint; it does not prove the full design timeline.
 
 ---
 
@@ -538,11 +541,11 @@ These stories matter because the final screenshot hides the work. Evidence level
 
 **Root cause.** iOS distribution requires a certificate and provisioning profile tied to an Apple Developer account. EAS needed the account owner's six-digit 2FA code to create or validate those credentials.
 
-**Solution.** The repository now records the exact blocker in [`testflight-readiness.md`](../testflight-readiness.md) and keeps the production EAS profile ready. There is no responsible code-only bypass for account-owner authentication.
+**Solution.** The repository records the original blocker in [`testflight-readiness.md`](../testflight-readiness.md). There was no responsible code-only bypass. The account owner completed 2FA, EAS created or validated the signing assets, the build completed, and the binary was uploaded to App Store Connect.
 
 **Lesson.** Shipping includes identity, authorization, and platform policy. Some blockers should be documented and handed to the account owner, not "fixed" in source.
 
-**Status.** Configuration is complete enough to reach credential generation. Signing, production build completion, and TestFlight upload remain pending.
+**Status.** Resolved. Signing and the production build completed, and Not Plain Calc is available as a public TestFlight beta.
 
 ---
 
@@ -596,27 +599,19 @@ This was a developer-level review, not legal advice. A human legal review remain
 
 EAS is linked to project `8811cf3a-7905-45b4-8f00-302b6b96783b`. The production profile targets a physical iOS build rather than a simulator. The local app version remains the source of truth.
 
-The build attempt reached Apple Developer authentication. It did not complete. Because no signed artifact was produced, there is no production build duration to report.
+The first build attempt stopped at Apple Developer authentication. The account owner later completed 2FA, EAS finished the signed production build, and the artifact was uploaded to App Store Connect. The build duration was not retained, so it is reported as unknown rather than estimated.
 
 ### App Store Connect and TestFlight
 
-The App Store Connect record has not been created and the binary has not been uploaded. The remaining sequence is:
+The App Store Connect record exists, the signed binary was uploaded, and TestFlight distributes it as a public beta. Reaching this point required completing Apple Developer 2FA, creating the signing assets, generating the production build, uploading it to App Store Connect, and enabling public beta distribution.
 
-1. Complete Apple Developer 2FA during EAS credential setup.
-2. Generate the signed production build.
-3. Create the App Store Connect app record for `com.notplain.calc`.
-4. Complete privacy labels as "Data Not Collected."
-5. Add metadata, support and privacy URLs, and screenshots.
-6. Upload the build to TestFlight.
-7. Run acceptance QA on a physical iPhone with VoiceOver, Reduced Motion, larger text, and calculation smoke tests.
-
-Calling the current state "shipped to TestFlight" would be inaccurate. What is shipped today is the public source package and its web release material. The distribution pipeline is prepared and blocked at an external credential boundary.
+The remaining work belongs to the production App Store release: gather beta feedback, complete the final physical-device and accessibility pass, confirm store metadata and privacy answers, and submit the production version for App Review.
 
 ---
 
 ## 8. Metrics
 
-Metrics were measured from the `main` branch on June 28, 2026. Source-line counts include blank lines and comments because they use `wc -l`; they exclude `package-lock.json`, images, HTML, CSS, and Markdown.
+Metrics were measured from the `main` branch and release records through June 30, 2026. Source-line counts include blank lines and comments because they use `wc -l`; they exclude `package-lock.json`, images, HTML, CSS, and Markdown.
 
 | Metric | Value | Method or note |
 |---|---:|---|
@@ -627,18 +622,18 @@ Metrics were measured from the `main` branch on June 28, 2026. Source-line count
 | Design-token modules | 6 | Color, layout, motion, shadow, spacing, typography |
 | Unit tests | 14 | All passing |
 | Test execution | 137 ms | Local Vitest run during case-study verification |
-| Commits | 6 | Public history on `main` |
-| Releases | 1 declared version | `1.0.0`; no Git tag and no App Store release |
+| Product release commits | 6 | Documented June 8 to June 9 release sprint, before portfolio publication commits |
+| Distribution | 1 public beta | Version `1.0.0` on TestFlight; no production App Store release and no Git tag |
 | Tracked files before this case study | 75 | `git ls-files` before portfolio assets were added |
 | Tracked repository payload | 11,585,428 bytes | Before this case-study folder |
-| Production build time | Not available | EAS stopped at Apple credential setup before a build artifact completed |
+| Production build time | Not recorded | EAS completed the signed artifact, but the duration was not retained |
 | Documented development time | 32 h 29 min | First to last public release commit, across 2 calendar days |
 | UI stages preserved in Git | 2 | First public snapshot and Macintosh Refined |
 | Icon exploration | 3 archived directions, 5 final crop candidates | Candidate E became the production icon |
 | App Store screenshots | 5 | Each 1290 by 2796 pixels |
 | Data collected | 0 categories | Offline app, no analytics or backend |
 
-The line count is context, not a quality score. The more useful numbers are the 14 behavior tests, five reusable components, six token modules, and a release checklist that names its incomplete steps.
+The line count is context, not a quality score. The more useful numbers are the 14 behavior tests, five reusable components, six token modules, and a completed path to public beta distribution.
 
 ---
 
@@ -668,9 +663,9 @@ The release process also exposed an operational mistake: toolchain runtime versi
 
 The hardest bugs were visual side effects of correct data. The 789 row existed. The result value was correct. The key widths were almost correct. A calculator makes those small geometry failures impossible to ignore.
 
-I was also surprised by how much release work remains after the app feels finished. Privacy copy, support URLs, screenshots, export compliance, dependency review, signing, provisioning, App Store metadata, and physical-device QA are all part of the product.
+I was also surprised by how much release work happens after the app feels finished. Privacy copy, support URLs, screenshots, export compliance, dependency review, signing, provisioning, App Store metadata, and physical-device QA are all part of the product.
 
-The Apple 2FA blocker was frustrating, but documenting it improved the project. It forced a clear boundary between work completed in the repository and work that requires account-owner authority.
+The Apple 2FA blocker was frustrating, but documenting it improved the project. It forced a clear boundary between work completed in the repository and work that required account-owner authority. Once the owner completed authentication, the same pipeline produced the build now distributed through public TestFlight.
 
 ### What I would do differently
 
@@ -690,7 +685,7 @@ I used to think a small app reduced the need for architecture. This project taug
 
 It also changed how I think about visual identity. Identity is not the number of custom elements on screen. It is the consistency between behavior, layout, material, type, motion, and the icon. The final Not Plain Calc icon works because it is a compressed piece of the interface, not a separate branding exercise.
 
-Most of all, I learned to treat an unfinished shipping step as information. The honest version of this project is stronger than a vague claim that it is "launch ready." The code is tested. The public release material exists. The EAS profile is configured. Apple authentication, signing, upload, and physical-device acceptance still need to happen.
+Most of all, I learned to treat an unfinished shipping step as information rather than hide it. The repository captured the 2FA blocker when it was real, then the release moved forward: Apple authentication and signing completed, App Store Connect received the build, and a public TestFlight beta went live. Production App Store release and expanded accessibility QA remain separate work.
 
 ---
 
@@ -709,7 +704,7 @@ Most of all, I learned to treat an unfinished shipping step as information. The 
 | Product | Offline, iPhone-first everyday calculator |
 | Technologies | Expo 54, React Native 0.81, React 19, TypeScript 5.9, Reanimated, Expo Haptics, Vitest, EAS |
 | GitHub | [github.com/Pitta150507/not-plain-calc](https://github.com/Pitta150507/not-plain-calc) |
-| TestFlight | Pending. EAS reaches Apple credential setup; 2FA, signing, App Store Connect, and upload remain. |
+| TestFlight | Public beta live. Signed build uploaded through App Store Connect. |
 
 ### Challenge
 
@@ -725,7 +720,7 @@ I separated the Expo Router shell, five calculator components, native haptics, s
 
 ### Shipping work
 
-I published the repository and GitHub Pages, generated five App Store screenshots, wrote the privacy and support pages, prepared App Store metadata, reviewed security and dependency risk, documented the no-data-collection position, assessed Apple-related IP risk, configured EAS, and reached Apple Developer credential generation.
+I published the repository and GitHub Pages, generated five App Store screenshots, wrote the privacy and support pages, prepared App Store metadata, reviewed security and dependency risk, documented the no-data-collection position, assessed Apple-related IP risk, configured EAS, completed signing, uploaded the build to App Store Connect, and opened the public TestFlight beta.
 
 ### Key achievements
 
@@ -734,7 +729,7 @@ I published the repository and GitHub Pages, generated five App Store screenshot
 - Converted UI-bound calculator behavior into a tested state machine.
 - Solved layout compression, adaptive result type, and keypad alignment issues.
 - Built a product-derived icon through five small-size crop tests.
-- Prepared the public release and recorded the exact TestFlight blocker without overstating launch status.
+- Resolved the Apple credential blocker and shipped a public TestFlight beta through App Store Connect.
 
 ### Final screen set
 
@@ -744,7 +739,7 @@ I published the repository and GitHub Pages, generated five App Store screenshot
 
 ### Result
 
-Not Plain Calc v1.0 is a tested, public, offline calculator release candidate with a complete visual identity and a documented route to TestFlight. The project demonstrates product design, React Native engineering, debugging, accessibility thinking, release preparation, and the judgment to distinguish a finished app from a finished distribution process.
+Not Plain Calc v1.0 is a tested, public, offline calculator beta with a complete visual identity and live TestFlight distribution. The project demonstrates product design, React Native engineering, debugging, accessibility thinking, release preparation, and the operational work required to move from a finished app to a publicly testable iOS product.
 
 ---
 
@@ -758,4 +753,4 @@ All visuals in this folder come from the repository's own source or existing pro
 | [`diagrams/`](diagrams/) | Original SVG architecture, state-machine, timeline, shipping, and design-evolution graphics created for this case study. |
 | [`assets/`](assets/) | Original icon directions, final icon candidates, color board, and spacing/type board. |
 
-Status and metrics were verified against `main` on June 28, 2026. The product source and UI were not modified while creating this case study.
+Status and metrics were verified against `main` on June 30, 2026. The product source and UI were not modified while creating or correcting this case study.
